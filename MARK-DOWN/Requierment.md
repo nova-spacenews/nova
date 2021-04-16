@@ -1,7 +1,7 @@
 # Software Requirements
 
 ## Vision
-
+Nova is an astronomical website for space lovers, that gather the latest news and display them neatly in one place will save people whom looking for the latest updates time and effort.
 
 
 ## Scope (In/Out)
@@ -20,7 +20,7 @@
 
 ## Minimum Viable Product (MVP)
 
-
+The website will contain a home page, a page displays the latest news headlines and a link to its source, a page that will give an astronomy picture of the date that the user will enter,  an astronomical information page, and a page that displays the astronomical movies .
 
 ## Functional Requirements
 
