@@ -1,0 +1,21 @@
+{
+  "name": "nova",
+  "version": "1.0.0",
+  "description": "If you are Interested in catching the latest news about outerspace and How was the sky in specfic day NOVA offers you these features and more.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nova-spacenews/nova.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nova-spacenews/nova/issues"
+  },
+  "homepage": "https://github.com/nova-spacenews/nova#readme"
+}
