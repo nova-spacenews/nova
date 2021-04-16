@@ -1,7 +1,7 @@
 # NOVA 
 
 
-If you are Interested in catching the latest news about outerspace and How was the sky in specfic day NOVA offers you these features and more.
+If you are Interested in catching the latest news about the space and How was the sky in specific day NOVA offers you these features and more.
 
 
 
@@ -67,14 +67,14 @@ As a user, I want to search for the image that NASA chose to be the image of the
 ## **Software Requirements**
 
 
-Mark Down File for the software requirements  [**here**](./MARK-DOWN/Requierment.md)
+Mark Down File for the software requirements  [**here**](/MARK-DOWN/Requierment.md)
 
 
 
 ## **Domain Modeling** 
 
 
-
+[Here] (https://app.moqups.com/iVcj0UEDlc/view/page/a855781aa)
 
 
 
