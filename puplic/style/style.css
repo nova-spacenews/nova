@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Tenor+Sans&display=swap');
+* {
+    box-sizing: border-box;
+}
+img{
+    height: 100px;
+    width: 190px;
+    display: flex;
+    float: left;
+}
+
+.container{
+  grid-column: 1 / -1;
+  grid-row: 1 / 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+div{
+    background-color: black;
+    height:100px;
+}
+
+.container a{
+  font-family: 'Tenor Sans', sans-serif;
+  display: inline-block;
+  text-align: right;
+  line-height: 30px;
+  padding: 0 20px;
+  color: #fff;
+  font-size: 22px;
+  border: 0;
+  font-weight: 200;
+  margin-top: 40px;
+  margin-right: 0;
+  position: relative;
+  text-decoration: none;
+}
+.container a:hover::after {
+    content: "";
+    width: 50%;
+    position: absolute;
+    left: 50%;
+    height: 1.5px;
+    background: #fff;
+    top: 30px;
+    transform: translateX(-50%);
+}
+
+
+
+
+footer div{
+    padding: 10px 10px 0px 10px;
+    bottom: 0;
+    width: 100%;
+    position: absolute;
+    text-align: center;
+    padding-right: 15px;
+    height: 85px;
+    background-color: black;
+    font-family: 'Tenor Sans', sans-serif;
+}
+/* footer img{
+    height: 50px;
+    line-height: 50px;
+    width: 50px;
+    position: relative;
+    display: inline-block;
+} */
+   footer div p {
+    margin-top: 14px;
+    font-size: 16px;
+    color: #fff;  
+  }
+
+footer a{
+  display: inline-block;
+  line-height: 30px;
+  padding: 0 20px;
+  color: #fff;
+  border: 0;
+  position: relative;
+  text-decoration: none;
+}
+    
+  
+footer  a:hover::after {
+    content: "";
+    width: 50%;
+    position: absolute;
+    left: 50%;
+    height: 1.5px;
+    background: #fff;
+    top: 30px;
+    transform: translateX(-50%);
+}
