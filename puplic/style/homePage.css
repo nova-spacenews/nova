@@ -1,0 +1,124 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    width: 960;
+    height: 100%;
+    margin: auto;
+    color: #b4a5a5;
+}
+
+main{
+}
+
+.container{
+    position: relative;
+}
+
+video {
+    position:fixed;
+    width:100%;     
+    height: auto;
+    opacity: 0.9;  
+}
+
+.heroText{
+    position: absolute;
+    z-index: 1;
+    margin-left: 45%;
+    margin-top: 25%;
+    margin-right: 5%;
+}
+
+.heroText h1{
+    font-size: 70px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.heroText p{
+    text-align: center;
+    margin-right: 10%;
+    margin-left: 10%;
+}
+
+.homeContent{   
+    position: absolute;
+    margin-top: 900px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr ;
+    gap: 50px;
+    margin-left: 30px;
+    margin-right: 30px;
+    color:#b4a5a5;
+}
+
+.news{ 
+  /* border:white solid 2px;  */
+  align-items: center;
+  text-align: center;
+  transition: 1.5s;
+  filter: drop-shadow(8px 8px 10px gray);
+  /* box-shadow:6px 6px 6px rgb(114, 64, 102) ; */
+  padding-top: 10px;
+
+}
+.news:hover{
+    cursor: pointer; 
+    opacity: .8;
+    transform: scale(1.1);
+}
+
+.pictureOfToday{
+    /* border:white solid 2px;  */
+    align-items: center;
+    text-align: center;
+    transition: 1.5s;
+    filter: drop-shadow(8px 8px 10px gray);
+    /* box-shadow:6px 6px 6px rgb(182, 149, 174) ; */
+    
+}
+.pictureOfToday:hover{
+    cursor: pointer; 
+    opacity: .8;
+    transform: scale(1.1);
+}
+
+.solarSystem{
+    /* border:white solid 2px;  */
+    align-items: center;
+    text-align: center;
+    transition: 1.5s;
+    filter: drop-shadow(8px 8px 10px gray);
+    /* box-shadow:6px 6px 6px rgb(114, 64, 102) ; */
+  
+}
+.solarSystem:hover{
+    cursor: pointer; 
+    opacity: .8;
+    transform: scale(1.1);
+}
+
+.seeMore{
+    background-color: #666666; 
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+}
+
+.seeMore:hover{
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+a{
+    text-decoration: none;
+}
