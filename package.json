@@ -17,5 +17,12 @@
   "bugs": {
     "url": "https://github.com/nova-spacenews/nova/issues"
   },
-  "homepage": "https://github.com/nova-spacenews/nova#readme"
+  "homepage": "https://github.com/nova-spacenews/nova#readme",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "method-override": "^3.0.0",
+    "pg": "^8.6.0",
+    "superagent": "^6.1.0"
+  }
 }
