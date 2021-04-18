@@ -108,6 +108,7 @@ function moviesPage(req,res) {
 
 function solarPage(req,res) {
 //write your code here
+  res.render('solarsystem');
 }
 
 function picturePage(req,res) {
@@ -213,6 +214,9 @@ server.get('*',(req,res)=>{
   res.render('error404')
 })
 
-server.listen(PORT, () => console.log(`Listening on port: ${PORT}`));
+client.connect()
+  .then(()=>{
+    server.listen(PORT, () => console.log(`Listening on port: ${PORT}`));
+  })
 
 
