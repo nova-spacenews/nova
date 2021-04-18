@@ -2,7 +2,7 @@
     box-sizing: border-box;
 }
 body{
-   background-image: url("../ga.jpg");
+   background-image: url("../img/ga.jpg");
    background-size: cover;
   background-position: center;
   position: relative;
