@@ -4,19 +4,66 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style/reset.css">
-    <link rel="stylesheet" href="./style/style.css">
-    <link rel="stylesheet" href="./style/news.css">
+    <link rel="stylesheet" href="../style/reset.css">
+    <!-- <link rel="stylesheet" href="./style/style.css"> -->
+    <link rel="stylesheet" href="../style/news.css">
     
     <title>About Us</title>
 </head>
 <body>
-    <%- include('../layout/header')  %>  
+    <%- include('layout/header')  %>  
     <main>
 
+        <div class="slideshow-container">
+
+            <% newsArr.forEach((val,indx) => {%>
+                
+                <div class="mySlides fade">
+                 <a href=<%=val.url%>><img src = <%=val.imgURL%> style="width:100%" ></a> 
+                  <div class="titleInslideShow"><%=val.title%></div>
+                </div>
+                <%});  %>
+                <div style="text-align:center">
+                    <% newsArr.forEach((val,indx) => {%>   
+                    <span class="dot" onclick=<%= `currentSlide(${indx+1})` %> ></span>
+                    <%});  %>
+                            
+        
+                    </div>
+            </div>
+        
+
+        <!-- Next and previous buttons -->
+      
+    
+
+      <div class="newslist">
+        <% newsArr.forEach((val,indx) => {%>
+                
+            <div class="item">
+                <img class="listImg" src=<%=val.imgURL%> alt=<%=val.title%>>
+                <div class="titleList"><%=val.title%></div>
+                <div class="dateList"><%=val.date%></div>
+                <div class="summary"><%=val.summary%></div>
+                <a class="readMore" href=<%=val.url%>>Read More >></a> 
+            </div>
+            <%});  %>
+
+            
+
+
+      </div>
+
+      <div class="pages">
+        <a href=<%=`/news/${pageNum-1}`%>>Previous</a>
+        <a href=<%=`/news/${pageNum+1}`%>>NEXT</a>
+    </div>
+            
+           
 
     </main>
-    <%- include('../layout/footer')  %>  
+    <%- include('layout/footer')  %>  
+    <script src="../js/new.js"></script>
     
 </body>
 </html>
