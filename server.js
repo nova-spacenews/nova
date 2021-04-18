@@ -23,12 +23,20 @@ server.get('/solar',solarPage)
 server.get('/picture',picturePage)
 server.get('/about',aboutUsPage)
 
+server.post( '/addToFavorite', addToFavorite )
+server.get( '/favorite', favoritePage )
+server.delete( '/delete/:id', deleteMovie )
 // functionality routs ********************************************************************************
 
 //Constructors *******************************************************************************************
 
 function Movie (data){
 //write your code here
+  this.title = data.original_title;
+  this.release_date = data.release_date;
+  this.vote = data.vote_average;
+  this.image_url = (data.backdrop_path) ? `https://image.tmdb.org/t/p/w500${data.backdrop_path}` : `https://image.tmdb.org/t/p/w500${data.poster_path}`;
+  this.overview = data.overview;
 }
 
 function Picture (data){
@@ -54,6 +62,23 @@ function newsPage(req,res) {
 
 function moviesPage(req,res) {
 //write your code here
+  let pageNum = req.query.page;
+  let moviesKey = process.env.MOVIES_KEY;
+  ///// Ask about pagination /////
+  let moviesURL = `https://api.themoviedb.org/3/discover/movie?with_keywords=9882&&with_genres=18&&api_key=${moviesKey}&&page=${pageNum}`;
+  superagent.get( moviesURL )
+    .then( moviesResult => {
+      let moviesData = moviesResult.body.results;
+      console.log( moviesData ); ///to make sure///
+      let moviesArr = moviesData.map( val => {
+        let newMovie = new Movie( val );
+        return newMovie;
+      } );
+      res.render( 'movies', { moviesResult: moviesArr } );
+    } )
+    .catch( err => {
+      res.render( 'error404', { error: err } );
+    } );
 }
 
 function solarPage(req,res) {
@@ -68,9 +93,58 @@ function aboutUsPage(req,res) {
 //write your code here
 }
 
+function addToFavorite( req, res ) { ////NEW FUNCTION FOR NEW ROUTE////
+  //write your code here
+  let { title, release_date, vote, image_url, overview } = req.body;
+  let SQL = `SELECT * FROM movies WHERE title=$1`;
+  let safeValues = [title];
+  client.query( SQL,safeValues )
+    .then( data=>{
+      if( data.rows[0] ){
+        res.redirect( '/movies' );
+      }
+      else {
+        SQL = 'INSERT INTO movies (title, release_date, vote, image_url, overview) VALUES ($1,$2,$3,$4,$5) RETURNING *;';
+        let safeValues2 = [title, release_date, vote, image_url, overview];
+        client.query( SQL,safeValues2 )
+          .then( insertingMovies =>{
+            console.log( insertingMovies ); ///to make sure///
+            res.redirect( '/movies' );
+            console.log( insertingMovies.rows[0].id,'id' ); ///to make sure///
+          } )
+
+          .catch( err =>{
+            res.render( 'error404',{error:err} );
+          } );
+      }
+    } );
+}
+
+function favoritePage( req, res ) {
+  //write your code here
+  let SQL = 'SELECT * FROM movies ;';
+  console.log( req.params.id ); ///to make sure///
+  client.query( SQL )
+    .then( favoriteMovies=>{
+      console.log( favoriteMovies );
+      res.render( 'favorite',{favoriteArr:favoriteMovies.rows} ); ////[]////
+    } )
+    .catch( err=>{
+      res.render( 'pages/error',{error:err} );
+    } );
+}
+
+function deleteMovie( req,res ){ ////NEW FUNCTION FOR NEW ROUTE////
+  //write your code here
+  let SQL = 'DELETE FROM movies WHERE id=$1;' ;
+  let safeValues = [req.params.id];
+  client.query( SQL,safeValues )
+    .then( res.redirect( '/favorite' ) ); ///to make sure///
+}
 // ***************************************************************************************************************
 server.get('*',(req,res)=>{
 
 })
 
 server.listen(PORT, () => console.log(`Listening on port: ${PORT}`));
+
