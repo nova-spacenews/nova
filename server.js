@@ -17,7 +17,7 @@ const client = new pg.Client({connectionString: process.env.DATABASE_URL});
 
 //Rout to get the pages
 server.get('/',homePage)
-server.get('/news',newsPage)
+server.get('/news/:page',newsPage)
 server.get('/movies',moviesPage)
 server.get('/solar',solarPage)
 server.get('/picture',picturePage)
@@ -50,6 +50,11 @@ function Picture (data){
 
 function News (data){
   //write your code here
+  this.title = data.title ;
+  this.date = data.publishedAt.slice(0, 10);
+  this.imgURL = data.imageUrl ;
+  this.summary = data.summary;
+  this.url = data.url;
 }
 
 function Planet (data){
@@ -59,10 +64,25 @@ function Planet (data){
 // Rout Handler Functions******************************************************************************************
 function homePage(req,res) {
 //write your code here
+  res.render('index')
 }
 
 function newsPage(req,res) {
-//write your code here
+  let page = req.params.page;
+  if(page<=0){page=1}
+  let offsetValue = ((page -1)*10) +1 ;
+  let newsULR = `https://spaceflightnewsapi.net/api/v2/articles?_start=${offsetValue}` ;
+  superagent.get(newsULR)
+    .then(data=>{
+      let newsData = data.body;
+      let newsArr = newsData.map(val=>{
+        return new News(val);
+      })
+      res.render('new',{newsArr : newsArr,pageNum:Number(page)})
+
+      console.log(page);
+    })
+    .catch(err=>res.render('error'))
 }
 
 function moviesPage(req,res) {
@@ -190,7 +210,7 @@ function deleteMovie( req,res ){ ////NEW FUNCTION FOR NEW ROUTE////
 }
 // ***************************************************************************************************************
 server.get('*',(req,res)=>{
-
+  res.render('error404')
 })
 
 server.listen(PORT, () => console.log(`Listening on port: ${PORT}`));

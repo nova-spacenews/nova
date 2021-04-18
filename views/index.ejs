@@ -11,7 +11,7 @@
     <title>About Us</title>
 </head>
 <body>
-    <%- include('../layout/header')  %>  
+    <%- include('layout/header')  %>  
     <main>
       
             <section class="container">
@@ -22,39 +22,42 @@
                 </div>
                 <div class="heroVideo">
                     <video autoplay muted loop>
-                        <source src="./vedio/A Space Journey (HD).mp4">
-                    </video>
+                        <source src="./assets/Pexels Videos 1851190.mp4">
                 </div>
                 <section class="homeContent">
-                    <div class="news">
-                        <img src="http://placehold.it/200x200/444444/FFFFFF" />
+                    <a class="ContentLink" href="/news/1"><div class="news">
+                        <h3>NEWS</h3>
                         <br>
-                        <h3>LATEST NEWS</h3>
-                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+                        <img src="./img/newsimg.jpg" />
+                        <p>The latest science news on astronomy, astrobiology, and space exploration.</p>
+                    </div></a>
+                    <a href="/picture" class="ContentLink"><div class="pictureOfToday">
+                        <h3>PICTURE OF The DAY</h3>
                         <br>
-                        <button class="seeMore" type="submit"><a href="">See More >></a></button>
-                    </div>
-                    <div class="pictureOfToday">
-                        <img src="http://placehold.it/200x200/444444/FFFFFF" />
-                        <br>
-                        <h3>PICTURE OF TODAY</h3>
-                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
-                        <br>
-                        <button class="seeMore" type="submit"><a href="">See More >></a></button>
-                    </div>
+                        <img src="./img/spacePhoto.jpg" />
+                        <p>A different astronomy and space science related image is featured each day, along with a brief explanation.</p>
+                        
+                    </div></a>
+                    <a class="ContentLink" href="/movies">
                     <div class="solarSystem">
-                        <img src="http://placehold.it/200x200/444444/FFFFFF" />
+                        <h3>MOVIES</h3>
                         <br>
+                        <img src="./img/Interstellar.jpg" />
+                        <p>Discover Movies about the space and astronomy</p>
+                        
+                    </div></a>
+                    <a class="ContentLink" href="/solar">
+                    <div class="solarSystem">
                         <h3>SOLAR SYSTEM</h3>
-                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
                         <br>
-                        <button class="seeMore" type="submit"><a href="">See More >></a></button>
-                    </div>
+                        <img src="./img/solar.jpg" />
+                        <p>Explore our solar system  </p>
+                    </div></a>
                 </section>
             </section>
 
     </main>
-    <%- include('../layout/footer')  %>  
+    <%- include('layout/footer')  %>  
     
 </body>
 </html>

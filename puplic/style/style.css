@@ -2,14 +2,18 @@
 * {
     box-sizing: border-box;
 }
-img{
+body{
+  display: grid;
+  grid-template-rows:100px minmax(calc(100vh - 185px) , 1fr) 85px ;
+}
+.headerLogo{
     height: 100px;
     width: 190px;
     display: flex;
     float: left;
 }
 
-.container{
+.navBarHeader{
   grid-column: 1 / -1;
   grid-row: 1 / 2;
   display: flex;
@@ -17,12 +21,12 @@ img{
   justify-content: center;
   z-index: 100;
 }
-div{
+header div{
     background-color: black;
     height:100px;
 }
 
-.container a{
+.navBarHeader a{
   font-family: 'Tenor Sans', sans-serif;
   display: inline-block;
   text-align: right;
@@ -37,7 +41,7 @@ div{
   position: relative;
   text-decoration: none;
 }
-.container a:hover::after {
+.navBarHeader a:hover::after {
     content: "";
     width: 50%;
     position: absolute;
@@ -53,9 +57,7 @@ div{
 
 footer div{
     padding: 10px 10px 0px 10px;
-    bottom: 0;
     width: 100%;
-    position: absolute;
     text-align: center;
     padding-right: 15px;
     height: 85px;
