@@ -13,7 +13,10 @@ server.use(express.static(__dirname + '/puplic'));
 server.use(methodOverride('_method'));
 server.use(express.urlencoded({extended:true}));
 const PORT = process.env.PORT || 3000;
-const client = new pg.Client({connectionString: process.env.DATABASE_URL});
+const client = new pg.Client( {
+  connectionString: process.env.DATABASE_URL,
+  ssl: { rejectUnauthorized: false },
+} );
 
 //Rout to get the pages
 server.get('/',homePage)
@@ -22,6 +25,7 @@ server.get('/movies',moviesPage)
 server.get('/solar',solarPage)
 server.get('/picture',picturePage)
 server.get('/about',aboutUsPage)
+server.get('/planet/earth',(req,res)=>{res.render('planet')})
 
 server.post( '/addToFavorite', addToFavorite )
 server.get( '/favorite', favoritePage )

@@ -7,6 +7,9 @@ body{
   background-position: center;
   position: relative;
 }
+main{
+  width: 100vw;
+}
 .card-carousel {
     display: flex;
     align-items: center;
