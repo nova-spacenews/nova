@@ -40,6 +40,11 @@ function Movie (data){
 }
 
 function Picture (data){
+  this.title = data.title;
+  this.date= data.date;
+  this.explanation = data.explanation;
+  this.media_url = data.hdurl;
+
 //write your code here
 }
 
@@ -86,6 +91,48 @@ function solarPage(req,res) {
 }
 
 function picturePage(req,res) {
+  // console.log(Object.keys(req.body).length);
+  //
+  console.log(Date.now());
+  const pictureKey = process.env.NASA_KEY;
+  let date = (Object.keys(req.query).length) ? req.query.date : '';
+  let SQL = 'SELECT * FROM pictures';
+  client.query(SQL)
+    .then(picturesData=>{
+      let dateArr = picturesData.rows.filter(row => {
+        if (row.date === date){ return 1;}
+
+      });
+      console.log(dateArr);
+
+      if (dateArr.length) {
+
+
+        res.render('./picture.ejs' , {pictureRend:dateArr[0]});
+
+      } else {
+
+
+
+        let URL = `https://api.nasa.gov/planetary/apod?date=${date}&api_key=${pictureKey}`;
+        superagent.get(URL)
+          .then(data=>{
+            let SQL = `INSERT INTO pictures (title,date,explanation,media_url) VALUES ($1,$2,$3,$4) RETURNING * ` ;
+            let picObj = new Picture(data.body);
+            let safeValues = [picObj.title,picObj.date,picObj.explanation,picObj.media_url];
+
+            client.query(SQL,safeValues)
+              .then(()=>{
+                res.render('./picture.ejs' , {pictureRend:picObj});
+              })
+
+          }).catch(errors=>{
+            console.error(errors);
+            res.render('./picture.ejs', {pictureRend:false});
+          });
+      }
+    });
+
 //write your code here
 }
 
@@ -147,4 +194,5 @@ server.get('*',(req,res)=>{
 })
 
 server.listen(PORT, () => console.log(`Listening on port: ${PORT}`));
+
 

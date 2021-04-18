@@ -5,18 +5,49 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style/reset.css">
-    <link rel="stylesheet" href="./style/style.css">
+    <!-- <link rel="stylesheet" href="./style/style.css"> -->
     <link rel="stylesheet" href="./style/picture.css">
+    <link rel="stylesheet" href="./style/errorPicture.css">
     
     <title>About Us</title>
 </head>
 <body>
-    <%- include('../layout/header')  %>  
+    <%- include('./layout/header')  %>  
+    <h1>Picture of the day </h1>
     <main>
+    
+        <div class="pictureForm">
+            <form action="/picture" method="GET">
+            <input type="date" min="06-16-1995" name="date" id=" date">
+            <button type="submit">Go!</button>
+            </form>
+        </div>
+        <% if (pictureRend){%>
+          <div class="pictureOfTheDay"> 
+            <section class="infoSection">
+            <h2><%= pictureRend.title%></h2>
+            <p class="pdate"> Picture Date : <%=pictureRend.date %> </p>
+            <p> Explanation: <%=pictureRend.explanation %></p>
+            </section>
+            <section class="picSection">
+            <img src="<%=pictureRend.media_url%>" alt="picture">
+            </section>
+           
+            <!-- <iframe src="<%=pictureRend.mediaURL%>" frameborder="1"></iframe> -->
+            </div>
+       <%}else{%>
+        <%-include ('./errorPicture') %>
+        <%}%>
 
+
+        <!-- this.title = data.title;
+        this.date= data.date;
+        this.explanation = data.explanation;
+        this.mediaURL = data.hdurl;
+       -->
 
     </main>
-    <%- include('../layout/footer')  %>  
+    <%- include('./layout/footer')  %>  
     
 </body>
 </html>
