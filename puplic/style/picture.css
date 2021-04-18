@@ -1,0 +1,74 @@
+body{
+    line-height: 1;
+width: clamp;
+width: clamp(400px,100%,1096px);
+margin: auto;
+background: #444;
+}
+
+h1{
+    font-size: 4em;
+text-align: center;
+color: white;
+background: black;
+font-weight: 800;
+}
+
+form{
+    display: flex;
+flex-flow: row wrap;
+justify-content: space-around;
+width: 20%;
+justify-content: space-between;
+border: #4444 dashed;
+padding: 10px;
+}
+form button{
+
+width: 40%;
+padding: 10px;
+color: wheat;
+background: chocolate;
+border-radius: 10px;
+box-shadow: 5px 5px black;
+font-size: 0.75em;
+ 
+}
+
+.infoSection{
+    margin: 30px 0 30px 0;
+    line-height: 1.5em;
+    border: solid;
+}
+
+.picSection img {
+    width: 100%;
+    height: clamp(100vh,100vh,200vh);
+}
+
+.infoSection h2 {
+    text-align: center;
+    font-size: 1.5em;
+    font-weight:700;
+}
+
+.infoSection p:last-child {
+    
+    color: #ddd;
+    
+    padding: 10px;
+
+
+}
+
+.pdate{
+    padding: 0 10px 0 10px;
+ 
+    font-weight: 600;
+}
+.pictureForm{
+   border : dotted salmon 5px ;
+   border-radius: 10px;
+    margin: 30px 0 0 0;
+
+}
