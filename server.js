@@ -51,10 +51,10 @@ function Planet (data){
 // Rout Handler Functions******************************************************************************************
 function homePage(req,res) {
 //write your code here
+  res.render('index')
 }
 
 function newsPage(req,res) {
-//write your code here
   let page = req.params.page;
   if(page<=0){page=1}
   let offsetValue = ((page -1)*10) +1 ;
@@ -62,7 +62,6 @@ function newsPage(req,res) {
   superagent.get(newsULR)
     .then(data=>{
       let newsData = data.body;
-      // res.send(newsData);
       let newsArr = newsData.map(val=>{
         return new News(val);
       })

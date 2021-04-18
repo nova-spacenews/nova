@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../style/reset.css">
-    <!-- <link rel="stylesheet" href="./style/style.css"> -->
+    <link rel="stylesheet" href="../style/style.css">
     <link rel="stylesheet" href="../style/news.css">
     
     <title>About Us</title>
@@ -13,6 +13,7 @@
 <body>
     <%- include('layout/header')  %>  
     <main>
+        <h1 class="newsHeader">Space News</h1>
 
         <div class="slideshow-container">
 
@@ -38,6 +39,7 @@
     
 
       <div class="newslist">
+          
         <% newsArr.forEach((val,indx) => {%>
                 
             <div class="item">
@@ -56,7 +58,7 @@
 
       <div class="pages">
         <a href=<%=`/news/${pageNum-1}`%>>Previous</a>
-        <a href=<%=`/news/${pageNum+1}`%>>NEXT</a>
+        <a href=<%=`/news/${pageNum+1}`%>>Next</a>
     </div>
             
            
