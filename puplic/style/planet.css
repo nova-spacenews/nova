@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Original+Surfer&display=swap');
+
+body{
+    background-image: url('../assets/images/galaxy3.jpg');
+}
+.planetInfo {
+    color: #b4a5a5;
+    padding-left: 40px;
+}
+
+.planetInfo img {
+    animation: 
+    pulse 7s ease infinite alternate, 
+    nudge 7s linear infinite alternate;
+    margin-bottom: 50px;
+  border-radius: 100%;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    background-color: red;
+  }
+  50% {
+    background-color: orange;
+  }
+}
+
+@keyframes nudge {
+  0%, 100% {
+    transform: translate(0, 0);
+  }
+  
+  50% {
+    transform: translate(400px, 0);
+  }
+  
+  80% {
+    transform: translate(-40px, 0);
+  }
+}
+/* animation-name: stretch;
+animation-duration: 1.5s; 
+animation-timing-function: ease-out; 
+animation-delay: 0;
+animation-direction: alternate;
+animation-iteration-count: infinite;
+animation-fill-mode: none;
+animation-play-state: running;
+}
+
+@keyframes stretch {
+0% {
+  transform: scale(.3);
+  background-color: red;
+  border-radius: 100%;
+}
+50% {
+  background-color: orange;
+}
+100% {
+  transform: scale(1.5);
+  background-color: yellow;
+}
+} */
+.planetInfo h1 {
+font-size: xxx-large;
+font-family: 'Teko', sans-serif;
+animation: pulse 5s infinite;
+}
+
+@keyframes pulse {
+  0% {
+   color: #7c8288;
+  }
+  50%{
+      color:rgb(199, 120, 186);
+  }
+  100% {
+    color: white;
+  }
+}
+
+ 
+    
+
+
+.planetInfo p {
+    color: white;
+    font-size: x-large;
+    font-family: 'Original Surfer', cursive;
+    animation: plan 5s infinite;
+}
+
+@keyframes plan {
+  0% {
+   color: #7c8288;
+  }
+  50%{
+      color:rgb(199, 120, 186);
+  }
+  100% {
+    color: #b4a5a5;
+  }
+    
+
+}
+
