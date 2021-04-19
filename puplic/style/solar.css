@@ -9,6 +9,7 @@ body{
 }
 main{
   width: 100vw;
+  height: 90vh;
 }
 .card-carousel {
     display: flex;
@@ -31,13 +32,17 @@ main{
     
     
   }
+  .saturn img {
+    object-fit:contain;
+  }
   .card-carousel .my-card img{
-      width: 400px;
-      height: 400px;
-      object-fit: cover;
+      width: 500px;
+      height: 500px;
+      object-fit: contain;
       
 
   }
+
   
   .card-carousel .my-card:after {
     content: '';
@@ -72,7 +77,7 @@ main{
     transform: translateX(-50%) translateY(-50%);
     font-size: 4rem;
     font-weight: 300;
-    color: black;
+    color: #dba967;
   }
   
   .card-carousel .my-card:nth-child(2):before {
@@ -84,7 +89,8 @@ main{
     transform: translateX(-50%) translateY(-50%);
     font-size: 4rem;
     font-weight: 300;
-    color: black;
+    font-family: Truculenta, sans-serif;
+    color: #443326;
   }
   
   .card-carousel .my-card:nth-child(3):before {
@@ -96,17 +102,19 @@ main{
     transform: translateX(-50%) translateY(-50%);
     font-size: 4rem;
     font-weight: 300;
-    color: black;
+    font-family: Truculenta, sans-serif;
+    color:rgb(38 222 222);
   }
   
   .card-carousel .my-card:nth-child(4):before {
-    content: "Earth's Moon";
+    content: "Moon";
     position: absolute;
     top: 50%;
     left: 50%;
     -webkit-transform: translateX(-50%) translateY(-50%);
     transform: translateX(-50%) translateY(-50%);
     font-size: 4rem;
+    font-family: Truculenta, sans-serif;
     font-weight: 300;
     color: black;
   }
@@ -120,7 +128,8 @@ main{
     transform: translateX(-50%) translateY(-50%);
     font-size: 4rem;
     font-weight: 300;
-    color: black;
+    font-family: Truculenta, sans-serif;
+    color:white
   }
   
   .card-carousel .my-card:nth-child(6):before {
@@ -132,31 +141,35 @@ main{
     transform: translateX(-50%) translateY(-50%);
     font-size: 4rem;
     font-weight: 300;
-    color: black;
+    font-family: Truculenta, sans-serif;
+    color: rgb(37, 37, 37);
   }
   
   .card-carousel .my-card:nth-child(7):before {
+    font-family: Truculenta, sans-serif;
     content: 'Saturn';
     position: absolute;
-    top: 50%;
+    top: 49%;
     left: 50%;
     -webkit-transform: translateX(-50%) translateY(-50%);
     transform: translateX(-50%) translateY(-50%);
     font-size: 4rem;
     font-weight: 300;
-    color: black;
+    color: #7f5d5d;
   }
+  
   
   .card-carousel .my-card:nth-child(8):before {
     content: 'Uranus';
     position: absolute;
+    font-family: Truculenta, sans-serif;
     top: 50%;
     left: 50%;
     -webkit-transform: translateX(-50%) translateY(-50%);
     transform: translateX(-50%) translateY(-50%);
     font-size: 4rem;
     font-weight: 300;
-    color: black;
+    color: rgba(31, 30, 30, 0.87);
   }
   
   .card-carousel .my-card:nth-child(9):before {
@@ -164,11 +177,12 @@ main{
     position: absolute;
     top: 50%;
     left: 50%;
+    font-family: Truculenta, sans-serif;
     -webkit-transform: translateX(-50%) translateY(-50%);
     transform: translateX(-50%) translateY(-50%);
     font-size: 4rem;
     font-weight: 300;
-    color: black;
+    color: rgb(194, 195, 196);
   }
   
   .card-carousel .my-card.active {
