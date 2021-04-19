@@ -31,7 +31,8 @@
                 </form>
             </div>
             <section class="picSection">
-            <img src="<%=pictureRend.media_url%>" alt="picture">
+            <a href="<%=pictureRend.media_url%>" target="_blank"><img  src="<%=pictureRend.media_url%>" alt="picture" onclick=myfunction></a>
+            
             </section>
            
             <!-- <iframe src="<%=pictureRend.mediaURL%>" frameborder="1"></iframe> -->
@@ -45,6 +46,7 @@
 
     </main>
     <%- include('./layout/footer')  %>  
+
     
 </body>
 </html>
