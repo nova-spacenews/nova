@@ -39,7 +39,7 @@ function Movie (data){
   this.title = data.original_title;
   this.release_date = data.release_date;
   this.vote = data.vote_average;
-  this.image_url = (data.backdrop_path) ? `https://image.tmdb.org/t/p/w500${data.backdrop_path}` : `https://image.tmdb.org/t/p/w500${data.poster_path}`;
+  this.image_url = (data.backdrop_path) ? `https://image.tmdb.org/t/p/w500${data.poster_path}` : `https://image.tmdb.org/t/p/w500${data.poster_path}`;
   this.overview = data.overview;
 }
 
@@ -173,7 +173,7 @@ function addToFavorite( req, res ) { ////NEW FUNCTION FOR NEW ROUTE////
   client.query( SQL,safeValues )
     .then( data=>{
       if( data.rows[0] ){
-        res.redirect( '/movies' );
+        res.redirect( 'back' );
       }
       else {
         SQL = 'INSERT INTO movies (title, release_date, vote, image_url, overview) VALUES ($1,$2,$3,$4,$5) RETURNING *;';
@@ -181,7 +181,7 @@ function addToFavorite( req, res ) { ////NEW FUNCTION FOR NEW ROUTE////
         client.query( SQL,safeValues2 )
           .then( insertingMovies =>{
             console.log( insertingMovies ); ///to make sure///
-            res.redirect( '/movies' );
+            res.redirect( 'back' );
             console.log( insertingMovies.rows[0].id,'id' ); ///to make sure///
           } )
 
