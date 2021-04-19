@@ -15,19 +15,28 @@
     <%- include('./layout/header')  %>  
     <main>
         <div class="planetInfo">
-            <img src="http://placehold.it/350x350/444444/FFFFFF" alt="">
+            <% planetArr.forEach(data=>{ %>
+               <img class="imageRotation" src="<%=data.img_url %>" alt="">
             
-            <h1> Title: Earth</h1>    
-            <p> Description: Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi dignissimos quod odit facilis minima temporibus, nisi vel debitis, officia exercitationem asperiores vero quae recusandae molestias blanditiis laboriosam, maxime deleniti qui? </p>
-            <p> Age: 2566854659 </p>
-            <p> Distance from Sun: 2566423656mil </p>
-            <P> Size :565576/6546</P>
+            <h1> <%= data.title %> </h1>    
+            <p> Age:<%= data.age %> </p>
+            <P> Size : <%= data.size %></P>
+            <p> Distance from Sun:<%= data.distance %> </p>
+              <p> <%= data.description %>  </p>
+           <% }) %>
+           
 </div>
 
 
     </main>
+    
     <script src="../js/planet.js"></script>
-    <%- include('./layout/footer')  %>  
+   
+    <%- include('./layout/footer')  %>
+     <script>
+if(planetArr[0].title === 'Saturn'){
+        $('.imageRotation').removeClass('imageRotation');
+    } </script>
     
 </body>
 </html>

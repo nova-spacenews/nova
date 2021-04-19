@@ -25,8 +25,8 @@ server.get('/movies',moviesPage)
 server.get('/solar',solarPage)
 server.get('/picture',picturePage)
 server.get('/about',aboutUsPage)
-server.get('/planet/earth',(req,res)=>{res.render('planet')})
-
+server.get('/planet/:id',planetPage)
+// (req,res)=>{res.render('planet')}
 server.post( '/addToFavorite', addToFavorite )
 server.get( '/favorite', favoritePage )
 server.delete( '/delete/:id', deleteMovie )
@@ -113,6 +113,18 @@ function moviesPage(req,res) {
 function solarPage(req,res) {
 //write your code here
   res.render('solarsystem');
+}
+
+function planetPage(req,res) {
+let{img_url,title,description,age,distance,size}=req.query;
+let SQL = `SELECT * FROM planetable WHERE id=$1;`;
+let safeValue = [req.params.id];
+console.log(safeValue);
+client.query(SQL,safeValue)
+.then(results=>{
+  console.log(results.rows);
+  res.render('planet',{planetArr:results.rows});
+});  
 }
 
 function picturePage(req,res) {
