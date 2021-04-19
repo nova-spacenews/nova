@@ -6,15 +6,20 @@ main{
   display: grid;
   grid-template-rows: 100px 100vh 1fr 70px;
   gap: 50px;
+  background: url(https://images.all-free-download.com/images/graphicthumb/starry_night_192398.jpg);
+  background-attachment: fixed;
 }
 .newsHeader{
-  font-size: 48px;
+  font-size: 50px;
+  font-weight: 600;
   height: 100px;
   line-height: 100px;
   width: 100%;
-  background-color: black;
-  color: beige;
+  /* background-color: black; */
+  color: white;
   text-align: center;
+  font-family: 'Orbitron', sans-serif;
+  letter-spacing: 5px;
 }
 .slideshow-container {
     height: 100vh;
@@ -27,7 +32,7 @@ main{
   }
   .slideshow-container img{
     height: 90vh;
-    border-radius: 50px;
+    border-radius: 20px;
 
   }
   
@@ -60,8 +65,10 @@ main{
     top: 0px;
     width: 100%;
     text-align: center;
-    border-top-left-radius: 100px;
-    border-top-right-radius: 100px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    font-family: Truculenta, sans-serif;
+    
 }
   
   
@@ -71,14 +78,14 @@ main{
     height: 15px;
     width: 15px;
     margin: 0 2px;
-    background-color: rgb(177, 151, 151);
+    background-color: #b4a5a5;
     border-radius: 50%;
     display: inline-block;
     transition: background-color 0.6s ease;
   }
   
   .active, .dot:hover {
-    background-color: #3d4431;
+    background-color: #151515;
   }
   
   /* Fading animation */
@@ -101,6 +108,15 @@ main{
 .item{
   border-bottom: rgba(163, 162, 162, 0.671) solid 2px;
   padding-bottom: 50px;
+  background-color: #151515;
+  /* background-color: #3c415c; */
+  color:white;
+  box-shadow: 6px 6px 6px 0 grey;
+  border-radius: 8px;
+  padding-top: 25px;
+  padding-left: 10px;
+  opacity: 0.8;
+
 
 }
   .listImg{
@@ -114,8 +130,8 @@ main{
     margin-top: 30px;
       font-size: 24px;
       font-weight: bold;
-      
-      
+      font-family: Truculenta, sans-serif;
+      letter-spacing: 1.5px;
     
   }
 
@@ -135,31 +151,38 @@ main{
     align-items: center;
   }
 .dateList{
-  color: gray;
-  
+  color:#b4a5a5;
+  font-family: 'Roboto', sans-serif;
+  margin-top: 13px;
   
 }
 .summary{
   margin:30px 0 ;
   font-size: 18px;
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.2;
 }
   .pages a{
     text-align: center;
     text-decoration: none;
-    font-size: 24px;
-    color: blanchedalmond;
-    background-color: black;
-    height: 50px;
-    line-height: 50px;
-    width: 100px;
+    font-size: 30px;
+    color: white;
+    background-color: #151515;
+    height: 60px;
+    line-height: 60px;
+    width: 130px;
     margin: 0 20px;
-    border-radius: 20px;
+    border-radius: 13px;
+    margin-bottom: 40px;
+    margin-left: 20px;
+    font-family: Truculenta, sans-serif;
   }
   .readMore{
     text-align: center;
     text-decoration: none;
     font-size: 24px;
-    color: grey;
+    color:#b4a5a5;
+    font-family: 'Roboto', sans-serif;
   }
 
  
