@@ -13,24 +13,26 @@
 </head>
 <body>
     <%- include('./layout/header')  %>  
-    <h1>Picture of the day </h1>
     <main>
+        <h1>Picture of the day </h1>
     
-        <div class="pictureForm">
-            <form action="/picture" method="GET">
-            <input type="date" min="06-16-1995" name="date" id=" date">
-            <button type="submit">Go!</button>
-            </form>
-        </div>
+
         <% if (pictureRend){%>
           <div class="pictureOfTheDay"> 
             <section class="infoSection">
             <h2><%= pictureRend.title%></h2>
-            <p class="pdate"> Picture Date : <%=pictureRend.date %> </p>
-            <p> Explanation: <%=pictureRend.explanation %></p>
+            <p class="pdate">  <%=pictureRend.date %> </p>
+            <p>  <%=pictureRend.explanation %></p>
             </section>
+            <div class="pictureForm">
+                <form action="/picture" method="GET">
+                <input type="date" min="1995-6-20" max=<%= new Date().toJSON().slice(0,10) %>  name="date" id=" date" value=<%=pictureRend.date%> >
+                <button type="submit">Go!</button>
+                </form>
+            </div>
             <section class="picSection">
-            <img src="<%=pictureRend.media_url%>" alt="picture">
+            <a href="<%=pictureRend.media_url%>" target="_blank"><img  src="<%=pictureRend.media_url%>" alt="picture" onclick=myfunction></a>
+            
             </section>
            
             <!-- <iframe src="<%=pictureRend.mediaURL%>" frameborder="1"></iframe> -->
@@ -40,14 +42,11 @@
         <%}%>
 
 
-        <!-- this.title = data.title;
-        this.date= data.date;
-        this.explanation = data.explanation;
-        this.mediaURL = data.hdurl;
-       -->
+
 
     </main>
     <%- include('./layout/footer')  %>  
+
     
 </body>
 </html>
