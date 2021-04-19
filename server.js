@@ -162,6 +162,7 @@ function picturePage(req,res) {
 }
 
 function aboutUsPage(req,res) {
+  res.render('about');
 //write your code here
 }
 
