@@ -25,8 +25,8 @@ server.get('/movies',moviesPage)
 server.get('/solar',solarPage)
 server.get('/picture',picturePage)
 server.get('/about',aboutUsPage)
-server.get('/planet/earth',(req,res)=>{res.render('planet')})
-
+server.get('/planet/:id',planetPage)
+// (req,res)=>{res.render('planet')}
 server.post( '/addToFavorite', addToFavorite )
 server.get( '/favorite', favoritePage )
 server.delete( '/delete/:id', deleteMovie )
@@ -39,7 +39,7 @@ function Movie (data){
   this.title = data.original_title;
   this.release_date = data.release_date;
   this.vote = data.vote_average;
-  this.image_url = (data.backdrop_path) ? `https://image.tmdb.org/t/p/w500${data.backdrop_path}` : `https://image.tmdb.org/t/p/w500${data.poster_path}`;
+  this.image_url = (data.backdrop_path) ? `https://image.tmdb.org/t/p/w500${data.poster_path}` : `https://image.tmdb.org/t/p/w500${data.poster_path}`;
   this.overview = data.overview;
 }
 
@@ -115,6 +115,18 @@ function solarPage(req,res) {
   res.render('solarsystem');
 }
 
+function planetPage(req,res) {
+let{img_url,title,description,age,distance,size}=req.query;
+let SQL = `SELECT * FROM planetable WHERE id=$1;`;
+let safeValue = [req.params.id];
+console.log(safeValue);
+client.query(SQL,safeValue)
+.then(results=>{
+  console.log(results.rows);
+  res.render('planet',{planetArr:results.rows});
+});  
+}
+
 function picturePage(req,res) {
   // console.log(Object.keys(req.body).length);
   //
@@ -173,7 +185,7 @@ function addToFavorite( req, res ) { ////NEW FUNCTION FOR NEW ROUTE////
   client.query( SQL,safeValues )
     .then( data=>{
       if( data.rows[0] ){
-        res.redirect( '/movies' );
+        res.redirect( 'back' );
       }
       else {
         SQL = 'INSERT INTO movies (title, release_date, vote, image_url, overview) VALUES ($1,$2,$3,$4,$5) RETURNING *;';
@@ -181,7 +193,7 @@ function addToFavorite( req, res ) { ////NEW FUNCTION FOR NEW ROUTE////
         client.query( SQL,safeValues2 )
           .then( insertingMovies =>{
             console.log( insertingMovies ); ///to make sure///
-            res.redirect( '/movies' );
+            res.redirect( 'back' );
             console.log( insertingMovies.rows[0].id,'id' ); ///to make sure///
           } )
 
