@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="img/favicon-32x32.png" type="image/x-icon">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style/reset.css">
+    <link rel="stylesheet" href="./style/style.css">
+    <link rel="stylesheet" href="./style/favorite.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <title>My List</title>
+</head>
+
+<body>
+    <%- include('./layout/header') %>
+        <main class="favoriteMain">
+
+        <div class="headerForFavorite">
+            <h1 class="h1favorite">MY WISH LIST</h1>
+            <button class="delete"><a href="/movies">SPACE MOVIES</a></button>
+        </div>
+        <div class="FAV">
+            <% favoriteArr.forEach((movie)=>{ %>
+                <div class="c-poster">
+                    <div class="c-poster-cover">
+                      <div class="c-poster-cover-photo">
+                        <img src="<%= movie.image_url %>" alt="">
+                      </div>
+                    </div>
+                        <div class="c-poster-body">
+                            <form action="/delete/<%=movie.id%>?_method=delete" method="POST">
+                                <button class="deleteBtn"><i class="fas fa-trash-alt"></i></button>
+                                </form> 
+                        <h2 class="c-poster-title"><%= movie.title %></h2>
+                        <h4 class="c-poster-network"><%= movie.release_date %></h4>
+                        <h4 class="c-poster-network">&#11088; <%= movie.vote %></h4>
+                        <p class="c-poster-description"><%= movie.overview %></p> 
+                        <br>  
+                       
+                        </div>
+                        
+                </div>
+                    
+                    <% }) %>
+
+        </div>
+            
+
+        </main>
+        <%- include('./layout/footer') %>
+
+</body>
+
+</html>

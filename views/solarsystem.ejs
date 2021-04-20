@@ -2,21 +2,35 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="shortcut icon" href="img/favicon-32x32.png" type="image/x-icon">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style/reset.css">
     <link rel="stylesheet" href="./style/style.css">
     <link rel="stylesheet" href="./style/solar.css">
     
-    <title>About Us</title>
+    <title>Solar System</title>
 </head>
 <body>
-    <%- include('../layout/header')  %>  
+    <%- include('layout/header')  %>  
     <main>
+        <div class="card-carousel">
 
+            <a href="/planet/2" class="my-card"><div ><img src="./img/18_mercury_new.png"></div></a>
+            <a href="/planet/3" class="my-card"><div ><img src="./img/27_venus_jg.png"></div></a>
+            <a href="/planet/9" class="my-card"> <div > <img src="./img/17_earth.png"></div></a>
+            <a href="/planet/6" class="my-card"><div ><img src="./img/31_earth_moon.png"></div></a>
+            <a href="/planet/5" class="my-card"><div ><img src="./img/19_mars.png"></div></a>
+            <a href="/planet/1" class="my-card"><div > <img src="./img/16_jupiter_new.png"></div></a>
+            <a href="/planet/4" class="my-card"><div ><img src="./img/28_saturn.png"></div></a>
+            <a href="/planet/7" class="my-card"><div ><img src="./img/29_uranus.png"></div></a>
+            <a href="/planet/8" class="my-card"><div ><img src="./img/30_neptune.png"></div></a>
+
+          </div>
 
     </main>
-    <%- include('../layout/footer')  %>  
-    
+    <%- include('layout/footer')  %>  
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT" crossorigin="anonymous"></script> 
+    <script src="./js/solar.js"></script>
 </body>
 </html>

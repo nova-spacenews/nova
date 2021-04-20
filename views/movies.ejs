@@ -1,22 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
+    <link rel="shortcut icon" href="img/favicon-32x32.png" type="image/x-icon">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style/reset.css">
     <link rel="stylesheet" href="./style/style.css">
     <link rel="stylesheet" href="./style/movies.css">
-    
-    <title>About Us</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <title>Movies</title>
 </head>
-<body>
-    <%- include('../layout/header')  %>  
-    <main>
 
+<body>
+    <%- include('./layout/header') %>
+    <main class="mainForMovies">
+
+        <div class="headerForMovies">
+            <h1 class="h1Movies">SPACE MOVIES</h1>
+            
+            <button class="wishList"><a href="/favorite">FAVORITE LIST<i class="fas fa-star"></i></a></button>
+        </div>
+        <div class="Movies" >
+            
+            
+            <% moviesResult.forEach((movie)=>{ %>
+                    
+                        <div class="c-poster">
+                            <div class="c-poster-cover">
+                                <div class="c-poster-cover-photo">
+                                  <img src="<%= movie.image_url %>" alt="">  
+                                </div>
+                            </div>
+                            <div class="c-poster-body">
+                                <form action="/addToFavorite" method="POST">
+                                   <input type="hidden" value="<%= movie.title %>" name="title">
+                                   <input type="hidden" value="<%= movie.release_date %>" name="release_date">
+                                   <input type="hidden" value="<%= movie.vote %>" name="vote">
+                                   <input type="hidden" value="<%= movie.image_url %>" name="image_url">
+                                   <input type="hidden" value="<%= movie.overview %>" name="overview">
+                                   <br>
+                                   <button type="submit" class="c-poster-seasons"><i class="fas fa-bookmark"></i></button>
+                                </form>
+                                <h2 class="c-poster-title"><%= movie.title %></h2>
+                                <h4 class="c-poster-network"><%= movie.release_date %></h4>
+                                <h4 class="c-poster-network"> &#11088;  <%= movie.vote %> </h4>
+                                <p class="c-poster-description"><%= movie.overview %></p>        
+                            
+                                
+                            </div>
+                        </div>
+                    
+                    <% }) %>
+                </div>
+    
+                <div class="moveToPages">
+                <form action="/movies" method="GET">
+                    <button type="submit" value="1" name="page" class="custom-btn btn-5">Page 1</button>
+                    <button type="submit" value="2" name="page" class="custom-btn btn-5">Page 2</button>
+                    <button type="submit" value="3" name="page" class="custom-btn btn-5">Page 3</button>
+                </form>
+            </div>
+               
 
     </main>
-    <%- include('../layout/footer')  %>  
-    
+    <%- include('./layout/footer') %>
 </body>
+
 </html>

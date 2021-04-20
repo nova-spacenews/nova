@@ -1,0 +1,131 @@
+/* body{
+    line-height: 1;
+width: clamp;
+width: clamp(400px,100%,1096px);
+margin: auto;
+background: rgb(39, 38, 38);
+} */
+main{
+    background: url(https://images.all-free-download.com/images/graphicthumb/starry_night_192398.jpg);
+    background-attachment: fixed;
+    padding-bottom: 25px;
+    } 
+h1{
+    font-family: 'Orbitron', sans-serif;
+    letter-spacing: 2px;
+    margin-top: 20px;
+font-size: 4em;
+text-align: center;
+color: white;
+/* background: rgba(44, 3, 82, 0.658); */
+font-weight: 800;
+}
+
+form{
+display: flex;
+justify-content: center;
+flex-flow: row wrap;
+width: 30%;
+
+height: 100px;
+margin: auto;
+}
+form input{
+cursor: pointer;
+width: 40%;
+height: 50%;
+padding: 10px;
+background-color: #3c415c6b;
+color: white;
+font-size: 1.2em;
+border-radius: 10px;
+
+ 
+}
+form button{
+margin-left: 30px;
+cursor: pointer;
+width: 20%;
+height: 50%;
+padding: 10px;
+color: rgb(255, 255, 255);
+background: #3c415c6b;;
+font-size: 1.5em;
+border-radius: 10px;
+transition:1000ms ;
+ 
+}
+
+form button:hover{
+
+    width: 30%;
+    height: 55%;
+    padding: 10px;
+    color: rgb(221, 213, 223);
+    background: #3c415c;
+    font-size: 1.75em;
+    border-radius: 5px;
+     
+    }
+
+.infoSection{
+width: 70%;
+padding: 20px;
+margin: 20px auto;
+margin-top: 40px;
+border-radius: 20px;
+background-color: #3c415c83 ;
+color: rgb(252, 242, 231);
+
+
+}
+
+.picSection  {
+    width: 90vw;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+.picSection img   {
+    height: 80vh;
+    border:solid #3c415cd3 ; 
+    border-radius: 50px;
+    border-width: 1px 5px 5px 1px;
+}
+iframe{
+    height: 90vh;
+    width: 90%;
+    margin: auto;
+    border:solid #3c415cd3 ; 
+    border-radius: 50px;
+    border-width: 1px 5px 5px 1px;
+}
+
+.infoSection h2 {
+    font-family: Truculenta, sans-serif;
+    text-align: center;
+    font-size: 2em;
+    font-weight:700;
+}
+
+.infoSection p:last-child {
+    
+    color: #ddd;
+    margin-top: 30px;
+    font-size: 20px;
+    padding: 10px;
+    font-family: 'Roboto', sans-serif;
+
+
+}
+
+.pdate{
+    font-family: Truculenta, sans-serif;
+    text-align: center;
+    letter-spacing: 2px;
+    margin-top: 10px;
+    font-weight: 600;
+
+}
+

@@ -1,0 +1,203 @@
+*{
+    box-sizing: border-box;
+}
+body{
+   background-image: url("../img/ga.jpg");
+   background-size: cover;
+  background-position: center;
+  position: relative;
+}
+main{
+  width: 100vw;
+  height: 90vh;
+}
+.card-carousel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin-top: 100px;
+  }
+  
+  .card-carousel .my-card   {
+    width: 600px;
+    position: relative;
+    z-index: 1;
+    -webkit-transform: scale(0.6) translateY(-2rem);
+    transform: scale(0.6) translateY(-2rem);
+    opacity: 0;
+    cursor: pointer;
+    pointer-events: none;
+    transition: 1s;
+    
+    
+  }
+ 
+  .card-carousel .my-card  img{
+      width: 500px;
+      height: 500px;
+      object-fit: contain;
+      
+
+  }
+
+  
+  .card-carousel .my-card:after {
+    content: '';
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    border-radius: 100%;
+    background-color: rgba(0,0,0,0.3);
+    bottom: -5rem;
+    -webkit-filter: blur(4px);
+    filter: blur(4px);
+  }
+  
+  .card-carousel .my-card:nth-child(0):before {
+    content: '0';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    font-size: 4rem;
+    font-weight: 300;
+    color: black;
+  }
+  
+  .card-carousel .my-card:nth-child(1):before {
+    content: 'Mercury';
+    position: absolute;
+    font-family: Truculenta, sans-serif;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    font-size: 4rem;
+    font-weight: 300;
+    color: #fdcf93;
+  }
+  
+  .card-carousel .my-card:nth-child(2):before {
+    content: 'Venus';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    font-size: 4rem;
+    font-weight: 300;
+    font-family: Truculenta, sans-serif;
+    color: #443326;
+  }
+  
+  .card-carousel .my-card:nth-child(3):before {
+    content: 'Earth';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    font-size: 4rem;
+    font-weight: 300;
+    font-family: Truculenta, sans-serif;
+    color:#ffb34e;
+  }
+  
+  .card-carousel .my-card:nth-child(4):before {
+    content: "Moon";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    font-size: 4rem;
+    font-family: Truculenta, sans-serif;
+    font-weight: 300;
+    color: black;
+  }
+  
+  .card-carousel .my-card:nth-child(5):before {
+    content: 'Mars';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    font-size: 4rem;
+    font-weight: 300;
+    font-family: Truculenta, sans-serif;
+    color:white
+  }
+  
+  .card-carousel .my-card:nth-child(6):before {
+    content: 'Jupiter';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    font-size: 4rem;
+    font-weight: 300;
+    font-family: Truculenta, sans-serif;
+    color: rgb(37, 37, 37);
+  }
+  
+  .card-carousel .my-card:nth-child(7):before {
+    font-family: Truculenta, sans-serif;
+    content: 'Saturn';
+    position: absolute;
+    top: 49%;
+    left: 50%;
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    font-size: 4rem;
+    font-weight: 300;
+    color: #7f5d5d;
+  }
+  
+  
+  .card-carousel .my-card:nth-child(8):before {
+    content: 'Uranus';
+    position: absolute;
+    font-family: Truculenta, sans-serif;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    font-size: 4rem;
+    font-weight: 300;
+    color: rgba(31, 30, 30, 0.87);
+  }
+  
+  .card-carousel .my-card:nth-child(9):before {
+    content: 'Neptune';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-family: Truculenta, sans-serif;
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    font-size: 4rem;
+    font-weight: 300;
+    color: rgb(194, 195, 196);
+  }
+  
+  .card-carousel .my-card.active {
+    z-index: 3;
+    -webkit-transform: scale(1) translateY(0) translateX(0);
+    transform: scale(1) translateY(0) translateX(0);
+    opacity: 1;
+    pointer-events: auto;
+    transition: 1s;
+  }
+  
+  .card-carousel .my-card.prev, .card-carousel .my-card.next {
+    z-index: 2;
+    -webkit-transform: scale(0.8) translateY(-1rem) translateX(0);
+    transform: scale(0.8) translateY(-1rem) translateX(0);
+    opacity: 0.6;
+    pointer-events: auto;
+    transition: 1s;
+  }

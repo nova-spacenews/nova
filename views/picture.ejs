@@ -4,19 +4,55 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="img/favicon-32x32.png" type="image/x-icon">
     <link rel="stylesheet" href="./style/reset.css">
     <link rel="stylesheet" href="./style/style.css">
     <link rel="stylesheet" href="./style/picture.css">
     
-    <title>About Us</title>
+    <title>Picture of the day</title>
 </head>
 <body>
-    <%- include('../layout/header')  %>  
+    <%- include('./layout/header')  %>  
     <main>
+        <h1>Picture of the day </h1>
+    
+
+        <% if (pictureRend){%>
+          <div class="pictureOfTheDay"> 
+            <section class="infoSection">
+            <h2><%= pictureRend.title%></h2>
+            <p class="pdate">  <%=pictureRend.date %> </p>
+            <p>  <%=pictureRend.explanation %></p>
+            </section>
+            <div class="pictureForm">
+                <form action="/picture" method="GET">
+                <input type="date" min="1995-6-20" max=<%= new Date().toJSON().slice(0,10) %>  name="date" id=" date" value=<%=pictureRend.date%> >
+                <button type="submit">Go!</button>
+                </form>
+            </div>
+            <section class="picSection">
+            <% if (pictureRend.media_type === 'video') { %>
+             <iframe src="<%=pictureRend.media_url%>" frameborder="0"></iframe>
+            <% } else if (pictureRend.media_type === 'image'){%>
+            <a href="<%=pictureRend.media_url%>" target="_blank"><img  src="<%=pictureRend.media_url%>" alt="picture" onclick=myfunction></a>
+            <% } else{%>
+                <img  src="./img/6.jpg" alt="picture">
+            <%}%>
+           
+            </section>
+           
+            
+            </div>
+       <%}else{%>
+        <%-include ('./errorPicture') %>
+        <%}%>
+
+
 
 
     </main>
-    <%- include('../layout/footer')  %>  
+    <%- include('./layout/footer')  %>  
+
     
 </body>
 </html>

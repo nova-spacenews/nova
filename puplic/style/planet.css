@@ -1,0 +1,169 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Truculenta:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap'); */
+
+main{
+    background-image: url('../img/ga.jpg');
+    background-repeat: no-repeat;
+}
+.planetInfo {
+    color: #b4a5a5;
+    padding-left: 40px;
+}
+
+ 
+
+
+@keyframes translateBackground{
+  0%{
+    background-position-x:0;
+  }
+  100%{
+    background-position-x:-600px;
+  }
+}
+@keyframes rotatePlanet{
+  0%{
+    transform:rotateZ(0);
+  }
+  100%{
+    transform:rotateZ(-360deg);
+  }
+}
+
+
+.saturn{
+  float: left;
+  margin-right: 50px;
+}
+  
+ 
+
+.imageRotation{
+  float: left;
+    animation: 
+    pulse 7s ease infinite alternate, 
+    nudge 7s linear infinite alternate;
+    margin-bottom: 50px;
+  border-radius: 100%;  
+   /* border-radius:50%; */
+ 
+  opacity: 0.9;
+  animation: rotatePlanet 50s infinite linear; 
+}
+
+@keyframes pulse {
+  0%, 100% {
+    background-color: red;
+  }
+  50% {
+    background-color: orange;
+  }
+}
+
+@keyframes nudge {
+  0%, 90% {
+    transform: translate(0, 0);
+  }
+  
+  50% {
+    transform: translate(900px, 0);
+  }
+  
+  80% {
+    transform: translate(-100px, 0);
+  }
+}
+/* animation-name: stretch;
+animation-duration: 1.5s; 
+animation-timing-function: ease-out; 
+animation-delay: 0;
+animation-direction: alternate;
+animation-iteration-count: infinite;
+animation-fill-mode: none;
+animation-play-state: running;
+}
+
+@keyframes stretch {
+0% {
+  transform: scale(.3);
+  background-color: red;
+  border-radius: 100%;
+}
+50% {
+  background-color: orange;
+}
+100% {
+  transform: scale(1.5);
+  background-color: yellow;
+}
+} */
+.planetInfo h1 {
+  margin-top: 50px;
+font-size: 80px;
+font-family: 'Teko', sans-serif;
+animation: pulse 5s infinite;
+margin-bottom: 30px;
+font-family: 'Orbitron', sans-serif;
+}
+
+@keyframes pulse {
+  0% {
+   color: #7c8288;
+  }
+  50%{
+      color:rgb(199, 120, 186);
+  }
+  100% {
+    color: white;
+  }
+}
+
+ 
+    
+
+
+.planetInfo p {
+    color: white;
+    font-size: x-large;
+    font-family:'Roboto', sans-serif;
+    animation: plan 5s infinite;
+    line-height: 1.6;
+    padding-right: 30px;
+   
+}
+
+@keyframes plan {
+  0% {
+   color: #6a839c;
+  }
+  20%{
+      color: #452782;
+  }
+  40% {
+    color:rgb(199, 120, 186);
+  }
+  60% {
+    color: rgb(152 31 109);
+  }
+  80% {
+    color: rgb(24 142 160);
+  } 
+  100% {
+    color: rgb(30 116 222) ;
+  } 
+
+}
+
+.planetInfo h1 p {
+  float: left;
+}
+
+.infoTitle{
+  
+  color: rgba(255, 255, 255, 0.664);
+  letter-spacing: 2px;
+  font-weight: bold;
+  font-family: Truculenta, sans-serif;;
+}
+

@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Tenor+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Truculenta:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+body{
+  display: grid;
+  grid-template-rows:100px minmax(calc(100vh - 185px) , 1fr) 85px ;
+}
+.headerLogo{
+    height: 100px;
+    width: 190px;
+    display: flex;
+    float: left;
+}
+
+.navBarHeader{
+  grid-column: 1 / -1;
+  grid-row: 1 / 2;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  z-index: 100;
+}
+header div{
+    background-color: black;
+    height:100px;
+}
+
+.navBarHeader a{
+  font-family: 'Tenor Sans', sans-serif;
+  display: inline-block;
+  text-align: right;
+  line-height: 30px;
+  padding: 0 20px;
+  color: #fff;
+  font-size: 22px;
+  border: 0;
+  font-weight: 200;
+  margin-top: 40px;
+  margin-right: 0;
+  position: relative;
+  text-decoration: none;
+}
+.navBarHeader a:hover::after {
+    content: "";
+    width: 50%;
+    position: absolute;
+    left: 50%;
+    height: 1.5px;
+    background: #fff;
+    top: 30px;
+    transform: translateX(-50%);
+}
+
+
+
+
+footer div{
+    padding: 10px 10px 0px 10px;
+    width: 100%;
+    text-align: center;
+    padding-right: 15px;
+    height: 85px;
+    background-color: black;
+    font-family: 'Tenor Sans', sans-serif;
+}
+/* footer img{
+    height: 50px;
+    line-height: 50px;
+    width: 50px;
+    position: relative;
+    display: inline-block;
+} */
+   footer div p {
+    margin-top: 14px;
+    font-size: 16px;
+    color: #fff;  
+  }
+
+footer a{
+  display: inline-block;
+  line-height: 30px;
+  padding: 0 20px;
+  color: #fff;
+  border: 0;
+  position: relative;
+  text-decoration: none;
+}
+    
+  
+footer  a:hover::after {
+    content: "";
+    width: 50%;
+    position: absolute;
+    left: 50%;
+    height: 1.5px;
+    background: #fff;
+    top: 30px;
+    transform: translateX(-50%);
+}

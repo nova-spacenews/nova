@@ -2,21 +2,63 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="shortcut icon" href="img/favicon-32x32.png" type="image/x-icon">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style/reset.css">
     <link rel="stylesheet" href="./style/style.css">
     <link rel="stylesheet" href="./style/homePage.css">
     
-    <title>About Us</title>
+    <title>NOVA</title>
 </head>
 <body>
-    <%- include('../layout/header')  %>  
+    <%- include('layout/header')  %>  
     <main>
-
+      
+            <section class="container">
+                <div class="heroText">
+                    <h2>Welcome to </h2>
+                    <h1>NOVA</h1>
+                    <p>Find out the latest <span class="featureName">News</span>  about the space, explore our <span class="featureName">Solar System</span> System with us, and don't forget to have a little fun by watching a <span class="featureName">Movie</span>  or taking a look at <span class="featureName">Picture of the day</span> .</p>
+                </div>
+                <div class="heroVideo">
+                    <video autoplay muted loop>
+                        <source src="./assets/Pexels Videos 1851190.mp4">
+                </div>
+                <section class="homeContent">
+                    <a class="ContentLink" href="/news/1"><div class="news">
+                        <h3>NEWS</h3>
+                        <br>
+                        <img src="./img/newsimg.jpg" />
+                        <p>The latest science news on astronomy, astrobiology, and space exploration.</p>
+                    </div></a>
+                    <a href="/picture" class="ContentLink"><div class="pictureOfToday">
+                        <h3>PICTURE OF THE DAY</h3>
+                        <br>
+                        <img src="./img/spacePhoto.jpg" />
+                        <p>A different astronomy and space science related image is featured each day, along with a brief explanation.</p>
+                        
+                    </div></a>
+                    <a class="ContentLink" href="/movies">
+                    <div class="solarSystem">
+                        <h3>MOVIES</h3>
+                        <br>
+                        <img src="./img/Interstellar.jpg" />
+                        <p>Discover Movies about the space and astronomy</p>
+                        
+                    </div></a>
+                    <a class="ContentLink" href="/solar">
+                    <div class="solarSystem">
+                        <h3>SOLAR SYSTEM</h3>
+                        <br>
+                        <img src="./img/solar.jpg" />
+                        <p>Explore our solar system  </p>
+                    </div></a>
+                </section>
+            </section>
 
     </main>
-    <%- include('../layout/footer')  %>  
+    <%- include('layout/footer')  %>  
     
 </body>
 </html>

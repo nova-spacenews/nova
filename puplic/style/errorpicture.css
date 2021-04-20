@@ -1,0 +1,30 @@
+.imgnotfound{
+    width: clamp(200px,100%,960px);
+    border: #efefef solid;
+    /* height: 100vh; */
+    
+}
+
+.imgnotfound p{
+    font-size: 1.5em;
+    color: #f5f5f5;
+   
+}
+.imgnotfound .headerimg{
+    color:#f00;
+    font-size: 2em;
+    margin-bottom: 4.5%;
+    font-family: 'Raleway', sans-serif;
+}
+
+.imgnotfound iframe{
+    width: 100%;
+    padding: 10px;
+
+}
+.pictureInfo{
+    font-size: 1em;
+    color: #f5f5f5;
+    text-align: center;
+    
+}
