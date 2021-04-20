@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="shortcut icon" href="../img/favicon-32x32.png" type="image/x-icon">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../style/reset.css">
@@ -9,7 +10,8 @@
     <link rel="stylesheet" href="../style/planet.css">
     
     
-    <title>About Us</title>
+    <title><%= planetArr[0].title %></title>
+    
 </head>
 <body>
     <%- include('./layout/header')  %>  
@@ -19,9 +21,10 @@
                <img class="imageRotation" src="<%=data.img_url %>" alt="">
             
             <h1> <%= data.title %> </h1>    
-            <p> Age:<%= data.age %> </p>
-            <P> Size : <%= data.size %></P>
-            <p> Distance from Sun:<%= data.distance %> </p>
+            <p> <span class="infoTitle">Age:</span> <%= data.age %> </p>
+            <P> <span class="infoTitle">Size :</span>  <%= data.size %></P>
+            <p> <span class="infoTitle">Distance From Sun:</span> <%= data.distance %> </p>
+            <br>
               <p> <%= data.description %>  </p>
            <% }) %>
            
@@ -30,13 +33,10 @@
 
     </main>
     
+    <%- include('./layout/footer')  %>
     <script src="../js/planet.js"></script>
    
-    <%- include('./layout/footer')  %>
-     <script>
-if(planetArr[0].title === 'Saturn'){
-        $('.imageRotation').removeClass('imageRotation');
-    } </script>
+
     
 </body>
 </html>

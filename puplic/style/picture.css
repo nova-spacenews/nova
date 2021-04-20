@@ -85,8 +85,16 @@ color: rgb(252, 242, 231);
     justify-content: center;
     align-items: center; 
 }
-.picSection img  {
+.picSection img   {
     height: 80vh;
+    border:solid #3c415cd3 ; 
+    border-radius: 50px;
+    border-width: 1px 5px 5px 1px;
+}
+iframe{
+    height: 90vh;
+    width: 90%;
+    margin: auto;
     border:solid #3c415cd3 ; 
     border-radius: 50px;
     border-width: 1px 5px 5px 1px;

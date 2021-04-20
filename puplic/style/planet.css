@@ -32,7 +32,10 @@ main{
 }
 
 
-
+.saturn{
+  float: left;
+  margin-right: 50px;
+}
   
  
 
@@ -153,5 +156,13 @@ font-family: 'Orbitron', sans-serif;
 
 .planetInfo h1 p {
   float: left;
+}
+
+.infoTitle{
+  
+  color: rgba(255, 255, 255, 0.664);
+  letter-spacing: 2px;
+  font-weight: bold;
+  font-family: Truculenta, sans-serif;;
 }
 

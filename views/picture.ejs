@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="img/favicon-32x32.png" type="image/x-icon">
     <link rel="stylesheet" href="./style/reset.css">
     <link rel="stylesheet" href="./style/style.css">
     <link rel="stylesheet" href="./style/picture.css">
-    <link rel="stylesheet" href="./style/errorPicture.css">
     
-    <title>About Us</title>
+    <title>Picture of the day</title>
 </head>
 <body>
     <%- include('./layout/header')  %>  
@@ -31,11 +31,17 @@
                 </form>
             </div>
             <section class="picSection">
+            <% if (pictureRend.media_type === 'video') { %>
+             <iframe src="<%=pictureRend.media_url%>" frameborder="0"></iframe>
+            <% } else if (pictureRend.media_type === 'image'){%>
             <a href="<%=pictureRend.media_url%>" target="_blank"><img  src="<%=pictureRend.media_url%>" alt="picture" onclick=myfunction></a>
-            
+            <% } else{%>
+                <img  src="./img/6.jpg" alt="picture">
+            <%}%>
+           
             </section>
            
-            <!-- <iframe src="<%=pictureRend.mediaURL%>" frameborder="1"></iframe> -->
+            
             </div>
        <%}else{%>
         <%-include ('./errorPicture') %>
