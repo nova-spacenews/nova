@@ -76,9 +76,10 @@ function newsPage(req,res) {
 }
 
 function moviesPage(req,res) {
-  let pageNum = req.query.page;
+  let pageNum = Number(req.query.page) ;
+  if(pageNum <= 0){pageNum = 1 ;}
   let moviesKey = process.env.MOVIES_KEY;
-  let moviesURL = `https://api.themoviedb.org/3/discover/movie?with_keywords=9882&&with_genres=18&&api_key=${moviesKey}&&page=${pageNum}`;
+  let moviesURL = `https://api.themoviedb.org/3/discover/movie?with_keywords=3801&&api_key=${moviesKey}&&page=${pageNum}`;
   superagent.get( moviesURL )
     .then( moviesResult => {
       let moviesData = moviesResult.body.results;
@@ -87,7 +88,7 @@ function moviesPage(req,res) {
         let newMovie = new Movie( val );
         return newMovie;
       } );
-      res.render( 'movies', { moviesResult: moviesArr } );
+      res.render( 'movies', { moviesResult: moviesArr ,page: pageNum} );
     } )
     .catch( err => {
       res.render( 'error404', { error: err } );

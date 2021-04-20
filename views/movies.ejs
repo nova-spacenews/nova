@@ -55,9 +55,9 @@
     
                 <div class="moveToPages">
                 <form action="/movies" method="GET">
-                    <button type="submit" value="1" name="page" class="custom-btn btn-5">Page 1</button>
-                    <button type="submit" value="2" name="page" class="custom-btn btn-5">Page 2</button>
-                    <button type="submit" value="3" name="page" class="custom-btn btn-5">Page 3</button>
+                    <button type="submit" value=<%= page - 1 %> name="page" class="custom-btn btn-5">Previous</button>
+                    <button type="submit" value=<%= page + 1 %> name="page" class="custom-btn btn-5">Next</button>
+                    <!-- <button type="submit" value="3" name="page" class="custom-btn btn-5">Page 3</button> -->
                 </form>
             </div>
                

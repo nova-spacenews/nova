@@ -48,6 +48,10 @@
 
 }
 
+.moveToPages button{
+  margin-left: 64px;
+}
+
 .p1, .p2, .p3{
     float: left;
     margin-left: 5px;
