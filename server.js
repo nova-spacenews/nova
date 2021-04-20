@@ -39,7 +39,7 @@ function Movie (data){
   this.title = data.original_title;
   this.release_date = data.release_date;
   this.vote = data.vote_average;
-  this.image_url = (data.backdrop_path) ? `https://image.tmdb.org/t/p/w500${data.poster_path}` : `https://image.tmdb.org/t/p/w500${data.poster_path}`;
+  this.image_url = (data.poster_path) ? `https://image.tmdb.org/t/p/w500${data.poster_path}` : '../img/default_poster.jpg';
   this.overview = data.overview;
 }
 

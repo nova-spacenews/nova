@@ -17,10 +17,11 @@
 
         <div class="headerMovies">
             <h1 class="h1Movies">SPACE MOVIES</h1>
-            <button class="goToFavorite"><a href="/favorite">FAVORITE</a></button>
+            <button class="custom-btn btn-5"><a href="/favorite">WISH LIST</a></button>
             <br>
         </div>
             <% moviesResult.forEach((movie)=>{ %>
+        <div class="grid">        
             <div class="c-poster">
                 <div class="c-poster-cover">
                     <div class="c-poster-cover-photo">
@@ -30,7 +31,7 @@
                 <div class="c-poster-body">
                     <h2 class="c-poster-title"><%= movie.title %></h2>
                     <h4 class="c-poster-network"><%= movie.release_date %></h4>
-                    <h4 class="c-poster-network"> &#11088;  <%= movie.vote %> &#11088;</h4>
+                    <h4 class="c-poster-network"> &#11088;  <%= movie.vote %> </h4>
                     <p class="c-poster-description"><%= movie.overview %></p>        
                 
                     <form action="/addToFavorite" method="POST">
@@ -44,12 +45,14 @@
                     </form>
                 </div>
             </div>
+        </div>
+    </div>
                 <% }) %>
                 <div class="moveToPages">
                 <form action="/movies" method="GET">
-                    <button type="submit" value="1" name="page" class="p1">Page 1</button>
-                    <button type="submit" value="2" name="page" class="p2">Page 2</button>
-                    <button type="submit" value="3" name="page" class="p3">Page 3</button>
+                    <button type="submit" value="1" name="page" class="custom-btn btn-5">Page 1</button>
+                    <button type="submit" value="2" name="page" class="custom-btn btn-5">Page 2</button>
+                    <button type="submit" value="3" name="page" class="custom-btn btn-5">Page 3</button>
                 </form>
             </div>
                
