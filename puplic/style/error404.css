@@ -1,7 +1,10 @@
-@import url(./reset.css);
+/* @import url(./reset.css); */
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@600&display=swap');
 
 .container404{width: 100%;}
+body{overflow: scroll;
+    background: #000;}
+    
 main{
     background-color: #000000;
     width: clamp(400px,100%,1024px);
@@ -55,4 +58,5 @@ section>a:hover{
 
     
 }
+
 
