@@ -1,3 +1,4 @@
+
 $num = $('.my-card').length;
 $even = $num / 2;
 $odd = ($num + 1) / 2;
@@ -14,8 +15,6 @@ if ($num % 2 == 0) {
 
 $('.my-card').hover(function() {
   $slide = $('.active').width();
-  console.log($('.active').position().left);
-
   if ($(this).hasClass('next')) {
     $('.card-carousel').stop(false, true).animate({left: '-=' + $slide},1100);
   } else if ($(this).hasClass('prev')) {
@@ -27,6 +26,7 @@ $('.my-card').hover(function() {
   $(this).addClass('active');
   $(this).prev().addClass('prev');
   $(this).next().addClass('next');
+
 
 });
 
