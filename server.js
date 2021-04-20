@@ -77,7 +77,7 @@ function newsPage(req,res) {
 
 function moviesPage(req,res) {
   let pageNum = Number(req.query.page) ;
-  if(pageNum <= 0){pageNum = 1 ;}
+  if(pageNum <= 0 || ! pageNum){pageNum = 1 ;}
   let moviesKey = process.env.MOVIES_KEY;
   let moviesURL = `https://api.themoviedb.org/3/discover/movie?with_keywords=3801&&api_key=${moviesKey}&&page=${pageNum}`;
   superagent.get( moviesURL )
