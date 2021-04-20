@@ -10,38 +10,41 @@
     <link rel="stylesheet" href="./style/style.css">
     <link rel="stylesheet" href="./style/favorite.css">
 
-    <title>About Us</title>
+    <title>My List</title>
 </head>
 
 <body>
     <%- include('./layout/header') %>
         <main class="favoriteMain">
 
-        <div class="headerFavorite">
+        
             <h1 class="h1favorite">MY WISH LIST</h1>
             <button class="custom-btn btn-5"><a href="/movies">SPACE MOVIES</a></button>
-        </div>
+        <div class="FAV">
             <% favoriteArr.forEach((movie)=>{ %>
-            <div class="c-poster">
-                <div class="c-poster-cover">
-                  <div class="c-poster-cover-photo">
-                    <img src="<%= movie.image_url %>" alt="">
-                  </div>
-                </div>
-                    <div class="c-poster-body">
-                    <h2 class="c-poster-title"><%= movie.title %></h2>
-                    <h4 class="c-poster-network"><%= movie.release_date %></h4>
-                    <h4 class="c-poster-network">&#11088; <%= movie.vote %></h4>
-                    <p class="c-poster-description"><%= movie.overview %></p> 
-                    <br>  
-                    <form action="/delete/<%=movie.id%>?_method=delete" method="POST">
-                    <button class="c-poster-seasons">&#10060;</button>
-                    </form> 
+                <div class="c-poster">
+                    <div class="c-poster-cover">
+                      <div class="c-poster-cover-photo">
+                        <img src="<%= movie.image_url %>" alt="">
+                      </div>
                     </div>
+                        <div class="c-poster-body">
+                        <h2 class="c-poster-title"><%= movie.title %></h2>
+                        <h4 class="c-poster-network"><%= movie.release_date %></h4>
+                        <h4 class="c-poster-network">&#11088; <%= movie.vote %></h4>
+                        <p class="c-poster-description"><%= movie.overview %></p> 
+                        <br>  
+                        <form action="/delete/<%=movie.id%>?_method=delete" method="POST">
+                        <button class="c-poster-seasons">&#10060;</button>
+                        </form> 
+                        </div>
+                        
+                </div>
                     
-            </div>
-                
-                <% }) %>
+                    <% }) %>
+
+        </div>
+            
 
         </main>
         <%- include('./layout/footer') %>

@@ -71,8 +71,6 @@ function newsPage(req,res) {
         return new News(val);
       })
       res.render('new',{newsArr : newsArr,pageNum:Number(page)})
-
-      console.log(page);
     })
     .catch(()=>res.render('error404'))
 }
@@ -147,8 +145,6 @@ function picturePage(req,res) {
       res.render('error404')
     })
 
-
-//write your code here
 }
 
 function aboutUsPage(req,res) {

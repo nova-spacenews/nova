@@ -9,46 +9,50 @@
     <link rel="stylesheet" href="./style/reset.css">
     <link rel="stylesheet" href="./style/style.css">
     <link rel="stylesheet" href="./style/movies.css">
-    <title>About Us</title>
+    <title>Movies</title>
 </head>
 
 <body>
     <%- include('./layout/header') %>
     <main class="mainForMovies">
 
-        <div class="headerMovies">
+        
             <h1 class="h1Movies">SPACE MOVIES</h1>
+            
             <button class="custom-btn btn-5"><a href="/favorite">WISH LIST</a></button>
-            <br>
-        </div>
+        
+        <div class="Movies" >
+            
+            
             <% moviesResult.forEach((movie)=>{ %>
-        <div class="grid">        
-            <div class="c-poster">
-                <div class="c-poster-cover">
-                    <div class="c-poster-cover-photo">
-                      <img src="<%= movie.image_url %>" alt="">  
-                    </div>
+                    
+                        <div class="c-poster">
+                            <div class="c-poster-cover">
+                                <div class="c-poster-cover-photo">
+                                  <img src="<%= movie.image_url %>" alt="">  
+                                </div>
+                            </div>
+                            <div class="c-poster-body">
+                                <h2 class="c-poster-title"><%= movie.title %></h2>
+                                <h4 class="c-poster-network"><%= movie.release_date %></h4>
+                                <h4 class="c-poster-network"> &#11088;  <%= movie.vote %> </h4>
+                                <p class="c-poster-description"><%= movie.overview %></p>        
+                            
+                                <form action="/addToFavorite" method="POST">
+                                   <input type="hidden" value="<%= movie.title %>" name="title">
+                                   <input type="hidden" value="<%= movie.release_date %>" name="release_date">
+                                   <input type="hidden" value="<%= movie.vote %>" name="vote">
+                                   <input type="hidden" value="<%= movie.image_url %>" name="image_url">
+                                   <input type="hidden" value="<%= movie.overview %>" name="overview">
+                                   <br>
+                                   <button type="submit" class="c-poster-seasons">&#128150;</button>
+                                </form>
+                            </div>
+                        </div>
+                    
+                    <% }) %>
                 </div>
-                <div class="c-poster-body">
-                    <h2 class="c-poster-title"><%= movie.title %></h2>
-                    <h4 class="c-poster-network"><%= movie.release_date %></h4>
-                    <h4 class="c-poster-network"> &#11088;  <%= movie.vote %> </h4>
-                    <p class="c-poster-description"><%= movie.overview %></p>        
-                
-                    <form action="/addToFavorite" method="POST">
-                       <input type="hidden" value="<%= movie.title %>" name="title">
-                       <input type="hidden" value="<%= movie.release_date %>" name="release_date">
-                       <input type="hidden" value="<%= movie.vote %>" name="vote">
-                       <input type="hidden" value="<%= movie.image_url %>" name="image_url">
-                       <input type="hidden" value="<%= movie.overview %>" name="overview">
-                       <br>
-                       <button type="submit" class="c-poster-seasons">&#128150;</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-                <% }) %>
+    
                 <div class="moveToPages">
                 <form action="/movies" method="GET">
                     <button type="submit" value="1" name="page" class="custom-btn btn-5">Page 1</button>

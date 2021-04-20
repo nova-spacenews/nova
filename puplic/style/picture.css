@@ -22,11 +22,11 @@ font-weight: 800;
 }
 
 form{
-    display: flex;
+display: flex;
+justify-content: center;
 flex-flow: row wrap;
-justify-content: space-between;
 width: 30%;
-justify-content: space-between;
+
 height: 100px;
 margin: auto;
 }
@@ -42,6 +42,7 @@ border-radius: 10px;
  
 }
 form button{
+margin-left: 30px;
 cursor: pointer;
 width: 20%;
 height: 50%;

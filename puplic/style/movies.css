@@ -4,7 +4,10 @@
 
 
 .mainForMovies {
-    background-image: url(../img/12333.jpg);
+    display: grid;
+    grid-template-rows:60px 50px 1fr 50px  ;
+    gap: 20px;
+    background-image: url(../img/12333.JPG);
     font-family: 'Open Sans', sans-serif;
     font-size: 12px;
     line-height: 24px;
@@ -119,25 +122,22 @@
     background: #fff;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
     cursor: pointer;
-    float: left;
-    height: 270px;
+    
+    height: 450px;
     color: inherit;
     overflow: hidden;
-    margin-bottom: 32px;
-    padding: 32px;
-    padding-left: 20px;
     -webkit-transition: .4s box-shadow;
             transition: .4s box-shadow;
     -webkit-transform: translateZ(0);
             transform: translateZ(0);
-    width: 200px;
+    width: 100%;
     align-items: center;
   }
 
-  .c-poster  {
-    margin-left: 38px;
-  }
-
+  
+.h1Movies{
+  color: white;
+}
   .c-poster:hover {
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
     -webkit-transition: .4s box-shadow .2s;
@@ -188,9 +188,7 @@
       height: 100%;
   }
 
-  .c-poster-body{
-    text-align: center;
-  }
+  
 
   .c-poster-title {
     font-size: 14px;
@@ -205,9 +203,10 @@
   }
   
   .c-poster-description {
-    font-size: 7px;
+    font-size: 13px;
+    font-weight: 650;
     background: #fff;
-    line-height: 10px;
+    line-height: 16px;
     color: #474849;    
     overflow: hidden;
     -webkit-transition: max-height .6s;
@@ -246,7 +245,7 @@
   .custom-btn {
     width: 70px;
     height: 40px;
-    color: rgb(0, 0, 0);
+    color: rgb(250, 246, 246);
     border-radius: 5px;
     font-family: 'Open Sans', sans-serif;
     font-weight: 500;
@@ -261,8 +260,15 @@
     outline: none;
     align-items: center;
   }
+  .Movies {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    /* grid-template-rows: repeat(5,400px); */
+    gap: 20px;
+}
 
   .btn-5 {
+    margin: auto;
     width: 80px;
     height: 40px;
     line-height: 42px;
@@ -293,7 +299,11 @@
      4px 4px 5px 0px #0002;
     transition:400ms ease all;
   }
-
+.c-poster-body {
+  padding: 10px;
+  padding-left: 25%;
+  /* text-align: center; */
+}
   .btn-5:after{
     right:inherit;
     top:inherit;
@@ -309,5 +319,8 @@
 
   .btn-5 a{
     text-decoration: none;
-    color: rgb(0, 0, 0);
+    color: rgb(250, 246, 246);
   }
+
+ 
+ 

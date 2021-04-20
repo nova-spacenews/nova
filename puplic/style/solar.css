@@ -69,13 +69,14 @@ main{
   .card-carousel .my-card:nth-child(1):before {
     content: 'Mercury';
     position: absolute;
+    font-family: Truculenta, sans-serif;
     top: 50%;
     left: 50%;
     -webkit-transform: translateX(-50%) translateY(-50%);
     transform: translateX(-50%) translateY(-50%);
     font-size: 4rem;
     font-weight: 300;
-    color: #dba967;
+    color: #fdcf93;
   }
   
   .card-carousel .my-card:nth-child(2):before {
@@ -101,7 +102,7 @@ main{
     font-size: 4rem;
     font-weight: 300;
     font-family: Truculenta, sans-serif;
-    color:rgb(38 222 222);
+    color:#ffb34e;
   }
   
   .card-carousel .my-card:nth-child(4):before {

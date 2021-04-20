@@ -33,6 +33,9 @@ VALUES('../img/29_uranus.png','Uranus','Uranus is the seventh planet from the Su
 INSERT INTO planetable (img_url,title,description,age,distance,size)
 VALUES('../img/30_neptune.png','Neptune','Neptune is the eighth and farthest-known Solar planet from the Sun. In the Solar System, it is the fourth-largest planet by diameter, the third-most-massive planet, and the densest giant planet. It is 17 times the mass of Earth, slightly more massive than its near-twin Uranus.','4.503 billion years','4.495 billion km','24,622 km / 15,299 miles');
 
+INSERT INTO planetable (img_url,title,description,age,distance,size)
+VALUES('../img/17_earth.png','Earth','Earth is the third planet from the Sun and the only astronomical object known to harbor life. About 29% of Earths surface is land consisting of continents and islands.','4.543 billion years','150.23 million km','6,371 km / 3,959 miles');
+
 
 
 
