@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="./style/reset.css">
     <link rel="stylesheet" href="./style/style.css">
     <link rel="stylesheet" href="./style/movies.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <title>Movies</title>
 </head>
 
@@ -16,11 +17,11 @@
     <%- include('./layout/header') %>
     <main class="mainForMovies">
 
-        
+        <div class="headerForMovies">
             <h1 class="h1Movies">SPACE MOVIES</h1>
             
-            <button class="custom-btn btn-5"><a href="/favorite">WISH LIST</a></button>
-        
+            <button class="wishList"><a href="/favorite">FAVORITE LIST<i class="fas fa-star"></i></a></button>
+        </div>
         <div class="Movies" >
             
             
@@ -33,11 +34,6 @@
                                 </div>
                             </div>
                             <div class="c-poster-body">
-                                <h2 class="c-poster-title"><%= movie.title %></h2>
-                                <h4 class="c-poster-network"><%= movie.release_date %></h4>
-                                <h4 class="c-poster-network"> &#11088;  <%= movie.vote %> </h4>
-                                <p class="c-poster-description"><%= movie.overview %></p>        
-                            
                                 <form action="/addToFavorite" method="POST">
                                    <input type="hidden" value="<%= movie.title %>" name="title">
                                    <input type="hidden" value="<%= movie.release_date %>" name="release_date">
@@ -45,8 +41,14 @@
                                    <input type="hidden" value="<%= movie.image_url %>" name="image_url">
                                    <input type="hidden" value="<%= movie.overview %>" name="overview">
                                    <br>
-                                   <button type="submit" class="c-poster-seasons">&#128150;</button>
+                                   <button type="submit" class="c-poster-seasons"><i class="fas fa-bookmark"></i></button>
                                 </form>
+                                <h2 class="c-poster-title"><%= movie.title %></h2>
+                                <h4 class="c-poster-network"><%= movie.release_date %></h4>
+                                <h4 class="c-poster-network"> &#11088;  <%= movie.vote %> </h4>
+                                <p class="c-poster-description"><%= movie.overview %></p>        
+                            
+                                
                             </div>
                         </div>
                     

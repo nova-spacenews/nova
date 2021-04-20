@@ -4,7 +4,7 @@
 
 .favoriteMain{
    display: grid;
-   grid-template-rows: 70px 50px 1fr ;
+   grid-template-rows: 100px  1fr ;
    gap: 20px;
    background-image: url(../img/12333.JPG);
     font-family: 'Open Sans', sans-serif;
@@ -16,6 +16,23 @@
     background-repeat: no-repeat;
     background-size: cover;
     clear: both;
+}
+.headerForFavorite{
+  display: flex;
+  justify-content: center;
+}
+
+.delete a{
+  text-decoration: none;
+  color: black;
+}
+.delete{
+  height: 40px;
+  /* width: 50px; */
+  align-self: center;
+  margin-left: 50px;
+  
+  margin-bottom: 13px;
 }
 
 .headerFavorite{
@@ -35,75 +52,16 @@
   gap: 25px;
 
 }
-.custom-btn {
-  margin: auto;
-    width: 150px;
-    height: 40px;
-    color: rgb(241, 232, 232);
-    border-radius: 5px;
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 500;
-    background: transparent;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    position: relative;
-    display: inline-block;
-     box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
-     7px 7px 20px 0px rgba(0,0,0,.1),
-     4px 4px 5px 0px rgba(0,0,0,.1);
-    outline: none;
-    align-items: center;
-  }
 
-  .btn-5 {
-    width: 150px;
-    height: 40px;
-    line-height: 42px;
-    margin-bottom: 25px;
-    border: none;
-    background: #1b1a1b1f;
-  background: linear-gradient(0deg,(#b4a5a5) 0%, (#a89090) 100%);
-  }
+.deleteBtn{
+ float: right; 
+}
 
-  .btn-5:hover {
-    color: #151515;
-    background: transparent;
-     box-shadow:none;
-  }
+i {
+  color: rgb(177, 10, 10);
+  font-size: large;
+ }
 
-  .btn-5:before,
-  .btn-5:after{
-    content:'';
-    position:absolute;
-    top:0;
-    right:0;
-    height:2px;
-    width:0;
-    background: #151515;
-    box-shadow:
-     -1px -1px 5px 0px rgb(0, 0, 0),
-     7px 7px 20px 0px #0003,
-     4px 4px 5px 0px #0002;
-    transition:400ms ease all;
-  }
-
-  .btn-5:after{
-    right:inherit;
-    top:inherit;
-    left:0;
-    bottom:0;
-  }
-
-  .btn-5:hover:before,
-  .btn-5:hover:after{
-    width:100%;
-    transition:800ms ease all;
-  }
-
-  .btn-5 a{
-    text-decoration: none;
-    color: rgb(0, 0, 0);
-  }
 
   .grid{
     display: grid;
@@ -189,9 +147,10 @@
   
 
   .c-poster-title {
-    font-size: 14px;
+    font-size: 24px;
     color: #363636;
     font-family: Truculenta, sans-serif;
+    font-weight: bolder;
   }
   
  .c-poster-network {
@@ -210,7 +169,7 @@
     -webkit-transition: max-height .6s;
             transition: max-height .6s;
     z-index: 1;
-    font-weight: 100;
+    font-weight: bolder;
     font-family: 'Roboto', sans-serif;
   }
 
@@ -230,36 +189,7 @@
     max-height: 300px;
   }
   
-  .c-poster-seasons {
-    bottom: 32px;
-    text-decoration: none;
-    color: #000;
-    align-items: center;
-    margin-left: 55px;
-    float: left;
-  }
 
 
-  .custom-btn {
-    width: 15%;
-    height: 40px;
-    color: rgb(240, 235, 235);
-    border-radius: 5px;
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 500;
-    background: transparent;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    position: relative;
-    display: inline-block;
-     box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
-     7px 7px 20px 0px rgba(0,0,0,.1),
-     4px 4px 5px 0px rgba(0,0,0,.1);
-    outline: none;
-    align-items: center;
-  }
 
-  .custom-btn a {
-    color: white;
-  }
- 
+  

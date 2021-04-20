@@ -128,7 +128,8 @@ font-family: 'Orbitron', sans-serif;
     font-size: x-large;
     font-family:'Roboto', sans-serif;
     animation: plan 5s infinite;
-    line-height: 1.6
+    line-height: 1.6;
+    padding-right: 30px;
    
 }
 

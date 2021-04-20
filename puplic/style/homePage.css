@@ -91,6 +91,14 @@ video {
     font-family: 'Tenor Sans', sans-serif;
     font-weight: bold;
     color: #cdfbff;
+    -webkit-text-stroke: 1px #e2bf76;
+    color: white;
+    text-shadow:
+        3px 3px 0 #001057,
+      -1px -1px 0 #001057,  
+       1px -1px 0 #001057,
+       -1px 1px 0 #001057,
+        1px 1px 0 #001057;
 }
 .homeContent img {
     width: 250px;

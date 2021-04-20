@@ -5,7 +5,7 @@
 
 .mainForMovies {
     display: grid;
-    grid-template-rows:60px 50px 1fr 50px  ;
+    grid-template-rows:100px  1fr 50px  ;
     gap: 20px;
     background-image: url(../img/12333.JPG);
     font-family: 'Open Sans', sans-serif;
@@ -17,6 +17,28 @@
     background-repeat: no-repeat;
     background-size: cover;
     clear: both;
+}
+
+.headerForMovies{
+  display: flex;
+  justify-content: center;
+  }
+
+  .wishList{
+    height: 40px;
+    align-self: center;
+    margin-left: 50px;
+    
+    margin-bottom: 13px;
+  }
+
+  .wishList a {
+    text-decoration: none;
+    color: black;
+  }
+i {
+ color: #e8b923;
+ font-size: large;
 }
 
 .headerMovies{
@@ -191,9 +213,10 @@
   
 
   .c-poster-title {
-    font-size: 14px;
+    font-size: 24px;
     color: #363636;
     font-family: Truculenta, sans-serif;
+    font-weight:bolder;
   }
   
  .c-poster-network {
@@ -212,7 +235,7 @@
     -webkit-transition: max-height .6s;
             transition: max-height .6s;
     z-index: 1;
-    font-weight: 100;
+    font-weight: bolder;
     font-family: 'Roboto', sans-serif;
   }
 
@@ -233,12 +256,12 @@
   }
   
   .c-poster-seasons {
-    bottom: 32px;
+    /* bottom: 32px; */
     text-decoration: none;
     color: #000;
-    align-items: center;
-    margin-left: 55px;
-    float: left;
+    /* align-items: center; */
+    /* margin-left: 55px; */
+    float: right;
   }
 
 
@@ -274,7 +297,7 @@
     line-height: 42px;
     margin-bottom: 25px;
     border: none;
-    background: #1b1a1b1f;
+    background: #ffffff1f;
   background: linear-gradient(0deg,(#b4a5a5) 0%, (#a89090) 100%);
   }
 
