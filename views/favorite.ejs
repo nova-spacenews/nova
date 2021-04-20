@@ -7,30 +7,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style/reset.css">
     <link rel="stylesheet" href="./style/style.css">
-    <link rel="stylesheet" href="./style/movies.css">
+    <link rel="stylesheet" href="./style/favorite.css">
 
     <title>About Us</title>
 </head>
 
 <body>
     <%- include('./layout/header') %>
-        <main>
+        <main class="favoriteMain">
 
-
-            <h1>FAVORITE MOVIES</h1>
-            <button><a href="/movies">Back</a></button>
+        <div class="headerFavorite">
+            <h1 class="h1favorite">MY WISH LIST</h1>
+            <button class="custom-btn btn-5"><a href="/movies">SPACE MOVIES</a></button>
+        </div>
             <% favoriteArr.forEach((movie)=>{ %>
-                <section class="favoriteMovies">
-                    <h2><%= movie.title %></h2>
-                    <h4><%= movie.release_date %></h4>
-                    <h4><%= movie.vote %></h4>
+            <div class="c-poster">
+                <div class="c-poster-cover">
+                  <div class="c-poster-cover-photo">
                     <img src="<%= movie.image_url %>" alt="">
-                    <p><%= movie.overview %></p> 
-                    <br>       
-                </section>
-                <form action="/delete/<%=movie.id%>?_method=delete" method="POST">
-                    <button>Delete</button>
-                </form>
+                  </div>
+                </div>
+                    <div class="c-poster-body">
+                    <h2 class="c-poster-title"><%= movie.title %></h2>
+                    <h4 class="c-poster-network"><%= movie.release_date %></h4>
+                    <h4 class="c-poster-network">&#11088; <%= movie.vote %></h4>
+                    <p class="c-poster-description"><%= movie.overview %></p> 
+                    <br>  
+                    <form action="/delete/<%=movie.id%>?_method=delete" method="POST">
+                    <button class="c-poster-seasons">&#10060;</button>
+                    </form> 
+                    </div>
+                    
+            </div>
+                
                 <% }) %>
 
         </main>
